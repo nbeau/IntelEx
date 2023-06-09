@@ -51,7 +51,7 @@
                         <div class="modal-body">
                             <div class="row justify-content-center">
                                 <div class="col justify-content-start bg-white">
-                                    <form novalidate class="needs-validation">
+                                    <form novalidate class="needs-validation" id="create_form">
                                         <div class="row">
                                             <div class="col">
                                                 <div class="form-floating mb-3">
@@ -93,6 +93,16 @@
             </div>
         </div>
 
+        <script>
+            const create_form = document.querySelector("#create_form")
+            create_form.addEventListener('submit', e => {
+                if (!create_form.checkValidity()) {
+                    e.preventDefault()
+                }
+                create_form.classList.add('was-validated')
+            })
+        </script>
+
         <div class="container">
             <div class="modal fade center" id="login">
                 <div class="modal-dialog modal-sm">
@@ -103,7 +113,7 @@
                         <div class="modal-body">
                             <div class="row justify-content-center">
                                 <div class="col justify-content-start bg-white">
-                                    <form novalidate class="needs-validation">
+                                    <form novalidate class="needs-validation" id="login_form">
                                         <div class="row row-cols-1">
                                             <div class="col">
                                                 <div class="form-floating mb-3">
@@ -139,12 +149,12 @@
         </div>
 
         <script>
-            const form = document.querySelector(".needs-validation")
-            form.addEventListener('submit', e => {
-                if (!form.checkValidity()) {
+            const login = document.querySelector("#login_form")
+            login.addEventListener('submit', e => {
+                if (!login.checkValidity()) {
                     e.preventDefault()
                 }
-                form.classList.add('was-validated')
+                login.classList.add('was-validated')
             })
         </script>
 
