@@ -33,13 +33,121 @@
                         </ul>
                     </div>
                 <form class="d-flex order-1">
-                    <button class="btn me-2" type="button" style="font-weight: 600">Log In</button>
-                    <button class="btn" type="button" style="background-color: #4AD1B1;color: white;box-shadow: 2px 2px 2px grey">Create Account</button>
+                    <button class="btn me-2" type="button" data-bs-toggle="modal" data-bs-target="#login" style="font-weight: 600">Log In</button>
+                    <button class="btn" type="button" data-bs-toggle="modal" data-bs-target="#create" style="background-color: #4AD1B1;color: white;box-shadow: 2px 2px 2px grey">Create Account</button>
                 </form>
             </div>
         </nav>
 
-        <div class="container-flex pt-5 mt-5">
+
+        <div class="container">
+            <div class="modal fade center" id="create">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row justify-content-center">
+                                <div class="col justify-content-start bg-white">
+                                    <form novalidate class="needs-validation">
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="form-floating mb-3">
+                                                    <input type="email" id="email" class="form-control border-5 rounded-0" placeholder="email" required>
+                                                    <label for="email">Email</label>
+                                                    <div class="invalid-feedback">Invalid email</div>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="form-floating mb-3">
+                                                    <input type="text" id="name" class="form-control border-5 rounded-0" placeholder="name" required>
+                                                    <label for="name">Full Name</label>
+                                                    <div class="invalid-feedback">You must enter your name</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row row-cols-1 row-cols-md-2">
+                                            <div class="col">
+                                                <div class="form-floating mb-3">
+                                                    <input type="text" id="pass" class="form-control border-5 rounded-0" placeholder="email" required>
+                                                    <label for="pass">Password</label>
+                                                    <div class="invalid-feedback">You must enter a password</div>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="row justify-content-center">
+                                                    <div class="col-auto">
+                                                        <button type="submit" class="btn m-2 p-2" style="background-color:#4AD1B1;color:white;box-shadow: 2px 2px 2px grey">Create Account</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="modal fade center" id="login">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row justify-content-center">
+                                <div class="col justify-content-start bg-white">
+                                    <form novalidate class="needs-validation">
+                                        <div class="row row-cols-1">
+                                            <div class="col">
+                                                <div class="form-floating mb-3">
+                                                    <input type="email" id="email" class="form-control border-5 rounded-0" placeholder="email" required>
+                                                    <label for="email">Email</label>
+                                                    <div class="invalid-feedback">Invalid email</div>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="form-floating mb-3">
+                                                    <input type="text" id="pass" class="form-control border-5 rounded-0" placeholder="email" required>
+                                                    <label for="pass">Password</label>
+                                                    <div class="invalid-feedback">Wrong Password</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row justify-content-center">
+                                            <div class="col">
+                                                <div class="row justify-content-center">
+                                                    <div class="col-auto">
+                                                        <button type="submit" class="btn m-2 p-2" style="background-color:#4AD1B1;color:white;box-shadow: 2px 2px 2px grey">Log In</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            const form = document.querySelector(".needs-validation")
+            form.addEventListener('submit', e => {
+                if (!form.checkValidity()) {
+                    e.preventDefault()
+                }
+                form.classList.add('was-validated')
+            })
+        </script>
+
+        <div class="container-flex pt-5 mt-5 z-1 gy-5 position-sticky">
             <div class="row row-cols-1 row-cols-md-2 justify-content-center">
                 <div class="col m-3" style="max-width:485px">
                     <h1 class="my-5">
@@ -58,24 +166,33 @@
                     <img src="./images/filler_image.jpeg" class="mt-5" style="height:350px;width:450px;object-fit:cover">
                 </div>
             </div>
-            <div class="row row-cols-1 row-cols-md-2 justify-content-center">
+            <div class="row row-cols-1 row-cols-md-2 justify-content-center mt-3">
                 <div class="col d-none d-lg-block" style="max-width:485px">
                     <img src="./images/filler_image2.webp" style="height:350px;width:450px;object-fit:cover">
                 </div>
-                <div class="col m-3" style="max-width:485px">
-                    <h1 class="my-5">
+                <div class="col m-3 ps-lg-5" style="max-width:485px">
+                    <h1 class="my-4">
                         How to contact us
                     </h1>
                     <p>
                         If you would have any questions or concerns, or perhaps you are interested in becoming a tutor, 
-                        you can come to our location, send us an e-mail, or call us.
+                        you can come to our location, call us, or send us an email.
                     </p>
                     <p>
-                        <i class="fas fa-map-marker-alt">&nbsp;&nbsp;&nbsp;258 Elgin St, Ottawa, ON K2P 1L9</i>
-                        <br>
-                        <i class="fa-solid fa-phone">&nbsp;&nbsp;(613) 999-9999</i>
-                        <br>
-                        <i class="fa-solid fa-envelope">&nbsp;&nbsp;intelex@intelex.com</i>
+                        <div class="row">
+                            <div class="col p-2">
+                                Monday - Friday<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8AM - 8PM
+                            </div>
+                            <div class="col-auto">
+                                <i class="fas fa-map-marker-alt"></i>
+                                &nbsp;&nbsp;&nbsp;258 Elgin St, Ottawa, ON K2P 1L9 <br>
+                                <i class="fa-solid fa-phone"></i>
+                                &nbsp;&nbsp;(613) 999-9999<br>
+                                <i class="fa-solid fa-envelope"></i>
+                                &nbsp;&nbsp;intelex@intelex.com
+                            </div>
+                        </div>
                     </p>
                 </div>
             </div>

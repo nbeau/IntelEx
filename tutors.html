@@ -32,15 +32,122 @@
                         </ul>
                     </div>
                 <form class="d-flex order-1">
-                    <button class="btn me-2" type="button" style="font-weight: 600">Log In</button>
-                    <button class="btn" type="button" style="background-color: #4AD1B1;color: white;box-shadow: 2px 2px 2px grey">Create Account</button>
+                    <button class="btn me-2" type="button" data-bs-toggle="modal" data-bs-target="#login" style="font-weight: 600">Log In</button>
+                    <button class="btn" type="button" data-bs-toggle="modal" data-bs-target="#create" style="background-color: #4AD1B1;color: white;box-shadow: 2px 2px 2px grey">Create Account</button>
                 </form>
             </div>
         </nav>
 
-
         <img class="opacity-50 z-0 position-fixed" src="./images/bg-image.jpeg" 
         style="min-height:100%;min-width:100%;height:auto;width:auto;position:absolute;top:-100%;bottom:-100%;left:-100%;right:-100%;margin:auto">
+
+
+        <div class="container">
+            <div class="modal fade center" id="create">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row justify-content-center">
+                                <div class="col justify-content-start bg-white">
+                                    <form novalidate class="needs-validation">
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="form-floating mb-3">
+                                                    <input type="email" id="email" class="form-control border-5 rounded-0" placeholder="email" required>
+                                                    <label for="email">Email</label>
+                                                    <div class="invalid-feedback">Invalid email</div>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="form-floating mb-3">
+                                                    <input type="text" id="name" class="form-control border-5 rounded-0" placeholder="name" required>
+                                                    <label for="name">Full Name</label>
+                                                    <div class="invalid-feedback">You must enter your name</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row row-cols-1 row-cols-md-2">
+                                            <div class="col">
+                                                <div class="form-floating mb-3">
+                                                    <input type="text" id="pass" class="form-control border-5 rounded-0" placeholder="email" required>
+                                                    <label for="pass">Password</label>
+                                                    <div class="invalid-feedback">You must enter a password</div>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="row justify-content-center">
+                                                    <div class="col-auto">
+                                                        <button type="submit" class="btn m-2 p-2" style="background-color:#4AD1B1;color:white;box-shadow: 2px 2px 2px grey">Create Account</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="modal fade center" id="login">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row justify-content-center">
+                                <div class="col justify-content-start bg-white">
+                                    <form novalidate class="needs-validation">
+                                        <div class="row row-cols-1">
+                                            <div class="col">
+                                                <div class="form-floating mb-3">
+                                                    <input type="email" id="email" class="form-control border-5 rounded-0" placeholder="email" required>
+                                                    <label for="email">Email</label>
+                                                    <div class="invalid-feedback">Invalid email</div>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="form-floating mb-3">
+                                                    <input type="text" id="pass" class="form-control border-5 rounded-0" placeholder="email" required>
+                                                    <label for="pass">Password</label>
+                                                    <div class="invalid-feedback">Wrong Password</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row justify-content-center">
+                                            <div class="col">
+                                                <div class="row justify-content-center">
+                                                    <div class="col-auto">
+                                                        <button type="submit" class="btn m-2 p-2" style="background-color:#4AD1B1;color:white;box-shadow: 2px 2px 2px grey">Log In</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            const form = document.querySelector(".needs-validation")
+            form.addEventListener('submit', e => {
+                if (!form.checkValidity()) {
+                    e.preventDefault()
+                }
+                form.classList.add('was-validated')
+            })
+        </script>
 
         <div class="container-flex pt-5 z-1 position-sticky">
             <div class="row pt-5 mt-5">
