@@ -9,32 +9,32 @@
     <body style="overflow-y:scroll;font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">
         <nav class="navbar navbar-expand-lg p-3 fixed-top shadow" style="background-color: white">
             <div class="container-fluid">
-                    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <a href="./index.html" class="navbar-brand">
-                        <span class="navbar-text" style="color: #255B8D;font-weight: 700">IntelEx Tutoring</span>
-                    </a>
-                    <div class="collapse navbar-collapse" id="nav">
-                        <ul class="navbar-nav me-auto">
-                            <li class="nav-item">
-                                <a  href="./pricing.html" class="nav-link ms-3" style="color: #255B8D">Pricing</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="./booking.html" class="nav-link ms-3" style="color: #255B8D;text-decoration: underline;font-weight: 500"><u>Booking</u></a>
-                            </li>
-                            <li class="nav-item">
-                                <a  href="./tutors.html" class="nav-link ms-3" style="color: #255B8D">Our tutors</a>
-                            </li>
-                            <li class="nav-item">
-                                <a  href="./about_us.html" class="nav-link ms-3" style="color: #255B8D">Contact & About us</a>
-                            </li>
-                        </ul>
-                    </div>
-                <form class="d-flex order-1">
+                <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a href="./index.html" class="navbar-brand">
+                    <span class="navbar-text" style="color: #255B8D;font-weight: 700">IntelEx Tutoring</span>
+                </a>
+                <form class="d-flex order-lg-1 order-md-0">
                     <button class="btn me-2" type="button" data-bs-toggle="modal" data-bs-target="#login" style="font-weight: 600">Log In</button>
                     <button class="btn" type="button" data-bs-toggle="modal" data-bs-target="#create" style="background-color: #4AD1B1;color: white;box-shadow: 2px 2px 2px grey">Create Account</button>
                 </form>
+                <div class="collapse navbar-collapse" id="nav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a  href="./pricing.html" class="nav-link ms-3" style="color: #255B8D">Pricing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./booking.html" class="nav-link ms-3" style="color: #255B8D;text-decoration: underline;font-weight: 500"><u>Booking</u></a>
+                        </li>
+                        <li class="nav-item">
+                            <a  href="./tutors.html" class="nav-link ms-3" style="color: #255B8D">Our tutors</a>
+                        </li>
+                        <li class="nav-item">
+                            <a  href="./about_us.html" class="nav-link ms-3" style="color: #255B8D">Contact & About us</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </nav>
 
@@ -174,7 +174,7 @@
                 </div>
             </div>
             <div class="row justify-content-center">
-                <div class="col-8 m-5 p-5 justify-content-start bg-white">
+                <div class="col-8 col-xl-6 m-5 p-5 justify-content-start bg-white">
                     <form novalidate class="needs-validation" id="booking_form">
                         <div class="row row-cols-1 row-cols-md-2">
                             <div class="col">
@@ -240,7 +240,6 @@
                             booking_form.classList.add('was-validated')
                         })
                     </script>
-
                 </div>
             </div>
         </div>
