@@ -235,10 +235,12 @@
                         const booking_form = document.querySelector("#booking_form")
                         booking_form.addEventListener('submit', e => {
                             if (!booking_form.checkValidity()) {
-                                e.preventDefault()
+                                e.preventDefault();
+                            } else {
+                                return alert("Your appointment has been successfully booked, we will send you an email confirming details.");
                             }
-                            booking_form.classList.add('was-validated')
-                        })
+                            booking_form.classList.add('was-validated');
+                        });
                     </script>
                 </div>
             </div>
